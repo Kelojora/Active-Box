@@ -10,7 +10,7 @@
     background-position: center;
     background-size: cover;
     margin-bottom: 116px;
-    padding: 38px 0 120px;
+    padding: 230px 0 120px;
     position: relative;
 }
 
@@ -32,21 +32,28 @@
     margin: 0 auto;
 }
 
-.header{
+.header__container{
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    position: relative;
-    margin-bottom: 130px;
 }
 
-.header::after{
+.header{
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+.header__container::after{
     content:'';
     background: #BABBC5;
-    width:1170px;
+    width: calc(100% - 30px);
     height: 1px;
     display: block;
     position: absolute;
-    bottom: -36px;
+    bottom: 0;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -70,20 +77,24 @@
     font-weight: 700;
     line-height: 15px;
     text-transform: uppercase;
-    padding: 41px 28px;
+    padding: 36px 0;
+    display: block;
+    min-width: 129px;
+    text-align: center;
+    border-bottom: 3px solid transparent;
 }
 
 .header__link:hover{
+    color: #FFFFFF;
     border-bottom: 3px solid #BABBC5;
 }
 
 .header__link:active{
     color: #E71414;
     border-bottom: 3px solid #E71414;
-
 }
 
-.header__op-menu{
+.header__burger{
     display: none;
 }
 
@@ -124,6 +135,7 @@
     display: block;
     margin: 0 auto;
     position: relative;
+    cursor: pointer;
 }
 
 .banner__btn:hover{
@@ -137,7 +149,7 @@
 
 @media only screen and (max-width: 1024px){
     .banner {
-        padding: 36px 0 126px;
+        padding: 126px;
         margin-bottom: 78px;
     }
     .header{
@@ -152,10 +164,14 @@
         padding: 41px 17px;
     }
 
-    .header::after{
+    .header__container::after{
         width:984px;
     }
 
+    .header__logo{
+        width: 120px;
+    }
+    
     .banner__title{
         font-size: 48px;
         line-height: 56px;
@@ -175,7 +191,7 @@
 
 @media only screen and (max-width: 767px){
     .banner {
-        padding: 21px 0 52px;
+        padding: 106px 0 52px;
         margin-bottom: 40px;
     }
 
@@ -184,7 +200,7 @@
         align-items: center;
     }
 
-    .header::after{
+    .header__container::after{
         display: none;
     }
 
@@ -192,7 +208,8 @@
         display: none;
     }
 
-    .header__op-menu{
+    .header__burger{
+        padding: 17px 15.5px;
         display: block;
     }
 
@@ -209,7 +226,7 @@
     }
 
     .banner__btn{
-        max-width: 280px;
+        max-width: 100%;
         padding: 15px;
     }
 
