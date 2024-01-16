@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Active-box project",
   "scripts": {
-    "statr": "parcel src/index.html",
+    "start": "parcel src/index.html",
     "build": "npx parcel build src/index.html"
   },
   "repository": {
