@@ -8,14 +8,8 @@
     left: 0;
     top: 0;
     width: 100%;
-    @media only screen and (max-width: 1024px) {
-        margin-bottom: 157px;
-    }
-
       @media only screen and (max-width: 767px) {
         padding: 22px 0;
-        margin-bottom: 50px;
-        align-items: center;
     }
 
     &__container {
@@ -40,11 +34,14 @@
         }
     }
 
+    &__logo-link{
+        @media only screen and (max-width: 1024px) {
+            max-width: 120px;
+        }
+    }
+
     &__logo{
         display: flex;
-        @media only screen and (max-width: 1024px){
-            width: 120px;
-        }
     }
     
     &__menu{
@@ -68,8 +65,11 @@
         text-align: center;
         border-bottom: 3px solid transparent;
         @media only screen and (max-width: 1024px){
-            min-width: auto;
+            min-width: 100px;
             padding: 41px 17px;}
+            @media only screen and (max-width: 767px){
+                min-width: max-content;
+                padding: 41px 17px;}
 
 
     &:hover{
@@ -92,7 +92,6 @@
     &__burger{
         display: none;
         @media only screen and (max-width: 767px){
-            padding: 17px 0;
             display: block;
         }
     }
@@ -107,7 +106,7 @@
         padding: 230px 0 120px;
         position: relative;
         @media only screen and (max-width: 1024px){
-            padding: 126px;
+            padding:  257px 0 126px;
             margin-bottom: 78px;
         }
         @media only screen and (max-width: 767px){
@@ -156,7 +155,7 @@
         font-family: 'Raleway', sans-serif;
         position: relative;
         max-width: 1000px;
-        margin: 0 auto 79.57;
+        margin: 0 auto 79.57px;
         @media only screen and (max-width: 1024px){
             font-size: 18px;
             line-height: 21px;
