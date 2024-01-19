@@ -1,0 +1,28 @@
+{
+  "name": "active-box",
+  "version": "1.0.0",
+  "description": "Active-box project",
+  "scripts": {
+    "start": "parcel src/index.html",
+    "build": "npx parcel build src/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kelojora/Active-Box.git"
+  },
+  "keywords": [
+    "scss",
+    "html",
+    "parcel"
+  ],
+  "author": "Max Krasnov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kelojora/Active-Box/issues"
+  },
+  "homepage": "https://github.com/Kelojora/Active-Box#readme",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.11.0",
+    "parcel": "^2.11.0"
+  }
+}
