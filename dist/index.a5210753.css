@@ -1,0 +1,134 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  z-index: 1;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+@media only screen and (width <= 1024px) {
+  .header {
+    margin-bottom: 157px;
+  }
+}
+
+@media only screen and (width <= 767px) {
+  .header {
+    align-items: center;
+    margin-bottom: 50px;
+  }
+}
+
+.header__container {
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+  display: flex;
+}
+
+.header__container:after {
+  content: "";
+  background: #babbc5;
+  width: calc(100% - 30px);
+  height: 1px;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media only screen and (width <= 1024px) {
+  .header__container:after {
+    width: 984px;
+  }
+}
+
+@media only screen and (width <= 767px) {
+  .header__container:after {
+    display: none;
+  }
+}
+
+.header__logo {
+  display: flex;
+}
+
+@media only screen and (width <= 1024px) {
+  .header__logo {
+    width: 120px;
+  }
+}
+
+.header__menu {
+  -moz-column-gap: 10px;
+  column-gap: 10px;
+  text-decoration: none;
+  list-style: none;
+  display: flex;
+}
+
+@media only screen and (width <= 1024px) {
+  .header__menu {
+    -moz-column-gap: 9px;
+    column-gap: 9px;
+  }
+}
+
+.header__link {
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  border-bottom: 3px solid #0000;
+  min-width: 129px;
+  padding: 36px 0;
+  font-family: Raleway, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 15px;
+  text-decoration: none;
+  display: block;
+}
+
+@media only screen and (width <= 1024px) {
+  .header__link {
+    padding: 41px 17px;
+  }
+}
+
+.header__link:hover {
+  color: #fff;
+  border-bottom: 3px solid #babbc5;
+}
+
+.header__link:active {
+  color: #e71414;
+  border-bottom: 3px solid #e71414;
+}
+
+@media only screen and (width <= 767px) {
+  .header__nav {
+    display: none;
+  }
+}
+
+.header__burger {
+  display: none;
+}
+
+@media only screen and (width <= 767px) {
+  .header__burger {
+    padding: 17px 15.5px;
+    display: block;
+  }
+}
+
+/*# sourceMappingURL=index.a5210753.css.map */

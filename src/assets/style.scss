@@ -9,7 +9,11 @@
     top: 0;
     width: 100%;
       @media only screen and (max-width: 767px) {
-        padding: 22px 0;
+        padding: 22px 0;        
+    }
+
+    &.scrolled {
+        background: $background-color;
     }
 
     &__container {
@@ -65,6 +69,7 @@
         min-width: 129px;
         text-align: center;
         border-bottom: 3px solid transparent;
+        transition: all .3s linear;
         @media only screen and (max-width: 1024px){
             min-width: 100px;
             padding: 41px 17px;}
@@ -87,14 +92,79 @@
     &__nav{
         @media only screen and (max-width: 767px){
         display: none;
+
+        &.open{
+            display: block;
+            position: fixed;
+            left: 0;
+            top:0;
+            width: 100%;
+            height: 100vh;
+            padding: 84px 20px 20px;
+        }
+
+        .header__menu{
+            display: block;
+        }
+
+        .header__link{
+            display: block;
+            text-align: left;
+            padding: 24px 0;
+        }
         }
     }
 
     &__burger{
         display: none;
+        width: 24px;
+        height: 18px;
+        position: relative;
         @media only screen and (max-width: 767px){
             display: block;
         }
+
+        &::before{
+            content:'';
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: block;
+            width: 100%;
+            border: 3px solid $font-color ;
+        }
+
+        &::after{
+            content:'';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            display: block;
+            width: 100%;
+            border: 3px solid $font-color ;
+        }
+
+        &.open{
+            .header__burger-item{
+                opacity: 0;
+                transition: all .3s linear;
+            }
+            &::after {
+                transform: rotate(-45deg) translate(5px, -5px);
+            }
+            &::before {
+                transform: rotate(45deg) translate(5.8px, 5.8px);
+            }
+        }
+    }
+
+    &__burger-item{
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 120%;
+        border: 3px solid $font-color;
     }
 }
 
@@ -129,6 +199,11 @@
 
     &__container {
         @include container();
+        @media only screen and (max-width: 767px) {
+            &.hide {
+                opacity: 0;
+            }
+        }
     }
 
     &__title{
@@ -181,6 +256,7 @@
         margin: 0 auto;
         position: relative;
         cursor: pointer;
+        transition: all .3s linear;
         @media only screen and (max-width: 1024px){
             max-width: 314px;
         }
@@ -276,6 +352,89 @@
         @media only screen and (max-width: 1024px) {
             font-size: 14px;
             line-height: 16px;
+        }
+    }
+}
+
+.works{
+    margin-bottom: 116px;
+    @media only screen and (max-width: 1024px) {
+        margin-bottom: 78px;
+    }
+    @media only screen and (max-width: 767px) {
+        margin-bottom: 35px;
+    }
+    
+    &__container{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2px;
+        @media only screen and (max-width: 767px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    &__wrapper-img{
+        padding-top: 100%;
+        position: relative;
+    }
+
+    &__image{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    &__info{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $works-background-hover;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: all .3s linear;
+        opacity: 0;
+        cursor: pointer;
+
+        &:hover{
+            opacity: 1;
+        }
+
+        &:active{
+            background-color:$works-background-active;
+        }
+    }
+
+    &__title{
+        @include font( $font-color, 24px, 900, 28px );
+        font-family: 'Raleway', sans-serif;
+        text-transform: uppercase;
+        margin-bottom: 20.57px;
+        @media only screen and (max-width: 1024px) {
+            margin-bottom: 12.81px;
+            @include font( $font-color, 18px, 900, 21px );
+            @media only screen and (max-width: 767px) {
+                margin-bottom: 4.63px;
+            }
+        }
+    }
+
+    &__text{
+        @include font( $font-color, 18px, 400, 21px );
+        font-family: 'Raleway', sans-serif;
+        @media only screen and (max-width: 1024px) {
+            @include font( $font-color, 14px, 400, 16px );
+        }
+        @media only screen and (max-width: 767px) {
+            @include font( $font-color, 14px, 400, 16px );
         }
     }
 }
