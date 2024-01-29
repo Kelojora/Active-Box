@@ -4,12 +4,12 @@
 
 .header{
     position: fixed;
-    z-index: 1;
+    z-index: 2;
     left: 0;
     top: 0;
     width: 100%;
       @media only screen and (max-width: 767px) {
-        padding: 22px 0;        
+        padding: 22px 0;       
     }
 
     &.scrolled {
@@ -99,7 +99,6 @@
             left: 0;
             top:0;
             width: 100%;
-            height: 100vh;
             padding: 84px 20px 20px;
         }
 
@@ -112,7 +111,7 @@
             text-align: left;
             padding: 24px 0;
         }
-        }
+    }
     }
 
     &__burger{
@@ -130,8 +129,9 @@
             left: 0;
             top: 0;
             display: block;
-            width: 100%;
-            border: 3px solid $font-color ;
+            width: 80%;
+            border: 3px solid $font-color;
+            transition: all .3s linear;
         }
 
         &::after{
@@ -140,8 +140,9 @@
             left: 0;
             bottom: 0;
             display: block;
-            width: 100%;
-            border: 3px solid $font-color ;
+            width: 80%;
+            border: 3px solid $font-color;
+            transition: all .3s linear;
         }
 
         &.open{
@@ -158,17 +159,20 @@
         }
     }
 
+
     &__burger-item{
         position: absolute;
         left: 0;
         top: 50%;
         transform: translateY(-50%);
-        width: 120%;
+        width: 100%;
         border: 3px solid $font-color;
+        transition: all .3s linear;
     }
 }
 
 .banner{
+        scroll-margin-top: 90px;
         background-image: url(/src/assets/img/banner.png);
         background-repeat: no-repeat;
         background-position: center;
@@ -249,6 +253,7 @@
         text-transform: uppercase;
         background-color: $btn-color;
         border: 1px solid $btn-color;
+        font-family: 'Raleway', sans-serif;
         max-width: 370px;
         width: 100%;
         padding: 25px;
@@ -277,6 +282,7 @@
 }
 
 .features{
+    scroll-margin-top: 90px;
     margin-bottom: 116px;
     @media only screen and (max-width: 1024px){
         margin-bottom: 80.11px;
@@ -357,6 +363,7 @@
 }
 
 .works{
+    scroll-margin-top: 90px;
     margin-bottom: 116px;
     @media only screen and (max-width: 1024px) {
         margin-bottom: 78px;
@@ -435,6 +442,478 @@
         }
         @media only screen and (max-width: 767px) {
             @include font( $font-color, 14px, 400, 16px );
+        }
+    }
+}
+
+.our-team{
+    scroll-margin-top: 90px;
+    margin-bottom: 114px;
+    @media only screen and (max-width: 1024px) {
+        margin-bottom: 78.41px;
+    }
+    @media only screen and (max-width: 767px) {
+        margin-bottom: 34px;
+    }
+
+    &__container{
+        @include container();
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 30px;
+        @media only screen and (max-width: 1024px) {
+            column-gap: 25.23px;
+        }
+        @media only screen and (max-width: 767px) {
+            grid-template-columns: 1fr;
+            row-gap: 50px;
+        }
+    }
+
+    &__wrapper-image{
+        position: relative;
+        padding-top: 100%;
+        margin-bottom: 25.23px;
+        @media only screen and (max-width: 1024px){
+            margin-bottom: 25px;
+        }
+    }
+
+    &__img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    &__title{
+        margin-bottom: 5.29px;
+        text-transform: capitalize;
+        @include font( $features-title-color, 24px, 700, 28px );
+        font-family: 'Raleway', sans-serif;
+        @media only screen and (max-width: 1024px){
+            margin-bottom: 4.6px;
+            @include font( $features-title-color, 18px, 700, 21px ); 
+        }
+        @media only screen and (max-width: 767px){
+            margin-bottom: 4.61px;
+            @include font( $features-title-color, 18px, 700, 21px ); 
+        }
+    }
+    &__position{
+        margin-bottom: 17.86px;
+        text-transform: capitalize;
+        font-family: 'Raleway', sans-serif;
+        @include font( $btn-color, 18px, 400, 21px );
+        @media only screen and (max-width: 1024px){
+            margin-bottom: 22.45px;
+            @include font( $btn-color, 14px, 400, 16px ); 
+        }
+        @media only screen and (max-width: 767px){
+            margin-bottom: 38.49px;
+            @include font( $btn-color, 14px, 400, 16px ); 
+        }
+    }
+
+    &__text{
+        margin-bottom: 37.86px;
+        text-transform: capitalize;
+        font-family: 'Raleway', sans-serif;
+        @include font( $features-text-color, 18px, 400, 21px );
+        @media only screen and (max-width: 1024px){
+            margin-bottom: 39.2px;
+            @include font( $features-text-color, 14px, 400, 16px ); 
+        }
+        @media only screen and (max-width: 767px){
+            margin-bottom: 55.15px;
+            @include font( $features-text-color, 14px, 400, 16px );
+        }
+    }
+
+    &__wrapper-social{
+        display: flex;
+        column-gap: 6px;
+    }
+
+    &__link{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 39px;
+        height: 39px;
+        border: 1px solid $color_border-link;
+        transition: fill .3s linear;
+        @media only screen and (max-width: 1024px) {
+            width: 32px;
+            height: 32px;
+        }
+        @media only screen and (max-width: 767px) {
+            width: 39px;
+            height: 39px;
+        }
+
+        &:hover {
+            border: 1px solid $works-background-hover;
+            svg {
+                path {
+                    fill: $active-color;
+                }
+            }
+        }
+        &:active {
+            border: 1px solid $works-background-active;
+        }
+    }
+
+    &__svg{
+        transition: fill .3s linear;
+        
+        &:hover 
+        path {
+           fill: $works-background-hover;
+        }
+        &:active path {
+            fill: $works-background-active;
+         }
+    }
+}
+
+.testimonials{
+    scroll-margin-top: 90px;
+    margin-bottom: 114px;
+    @media only screen and (max-width: 1024px) {
+        margin-bottom: 77.51px;
+    }
+    @media only screen and (max-width: 767px) {
+        margin-bottom: 52px;
+    }
+
+    &__container{
+        margin-bottom: 31px;
+        height: auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        @media only screen and (max-width: 1024px) {
+            margin-bottom: 23.93px;
+        }
+        @media only screen and (max-width: 767px) {
+            grid-template-columns: 1fr;
+            margin-bottom: 23px;
+        }
+    }
+
+    &__wrapper-img{
+        position: relative;
+        @media only screen and (max-width: 767px) {
+            aspect-ratio: 4/3;
+        }
+    }
+
+    &__image{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    &__content{
+        background-color:$background-testimonials;
+        padding: 116px 15px 144px;
+        @media only screen and (max-width: 1024px) {
+            padding: 47px 15px 110px;
+        }
+        @media only screen and (max-width: 767px) {
+            padding: 20px 20px 95px;
+        }
+    }
+
+    &__title{
+        font-family: 'Cardo', serif;
+        font-style: italic;
+        text-transform: capitalize;
+        margin: 0 auto 15px;
+        max-width: 471px;
+        @include font( $font-color, 36px, 400, 49px );
+        @media only screen and (max-width: 1024px) {
+            margin-bottom: 14px;
+            @include font( $font-color, 24px, 400, 32px );
+        }
+        @media only screen and (max-width: 767px) {
+            margin-bottom: 18px;
+            @include font( $font-color, 24px, 400, 32px );
+        }
+    }
+
+    &__text{
+        margin:0 auto;
+        text-transform: uppercase;
+        font-family: 'Raleway', sans-serif;
+        max-width: 471px;
+        @include font( $font-color, 13px, 700, 15px );
+        @media only screen and (max-width: 1024px) {
+            @include font( $font-color, 12px, 700, 14px );
+        }
+        @media only screen and (max-width: 767px) {
+            @include font( $font-color, 12px, 700, 14px );
+        }
+    }
+
+    .swiper-pagination {
+        display: flex;
+        column-gap: 25px;
+        justify-content: center;
+    
+        &-bullet {
+            width: 14px;
+            height: 14px;
+            border: 1px solid $background_swiper;
+            border-radius: 50%;
+            background-color: transparent;
+            opacity: 1;
+            &:hover {
+                background-color: $background_testimonials;
+                transition: all .3s linear;
+            }
+            &-active {
+                background-color: $background_swiper;
+            }
+    
+        }
+    }
+    .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+        margin: 0;
+    }
+    .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal {
+        bottom: 0;
+    }
+}
+
+
+.download{
+    scroll-margin-top: 90px;
+    margin-bottom: 114px;
+    @media only screen and (max-width: 1024px) {
+        margin-bottom: 78px;
+    }
+    @media only screen and (max-width: 767px) {
+        margin-bottom: 45px;
+    }
+
+    &__container{
+        @include container();
+    }
+
+    &__title{
+        margin-bottom: 25px;
+        text-align: center;
+        @include font( $download-text, 30px, 500, 35px );
+        font-family: 'Raleway', sans-serif;
+        @media only screen and (max-width: 1024px) {
+            margin-bottom: 20px;
+            @include font( $download-text, 24px, 500, 28px );
+        }
+        @media only screen and (max-width: 767px) {
+            margin-bottom: 21px;
+            @include font( $download-text, 18px, 500, 21px );
+        }
+    }
+
+    &__text{
+        margin-bottom: 47.71px;
+        text-align: center;
+        text-transform: uppercase;
+        @include font( $download-text, 18px, 700, 21px );
+        font-family: 'Raleway', sans-serif;
+        @media only screen and (max-width: 1024px) {
+            margin-bottom: 43.29px;
+            @include font( $download-text, 14px, 700, 16px );
+        }
+        @media only screen and (max-width: 1024px) {
+            margin-bottom: 11px;
+            @include font( $download-text, 13px, 700, 15px );
+        }
+    }
+
+    &__btn{
+        @include font($font-color, 24px, 900, 28px );
+        text-transform: uppercase;
+        background-color: $btn-color;
+        border: 1px solid $btn-color;
+        font-family: 'Raleway', sans-serif;
+        max-width: 370px;
+        width: 100%;
+        padding: 25px;
+        display: block;
+        margin: 0 auto;
+        position: relative;
+        cursor: pointer;
+        transition: all .3s linear;
+        @media only screen and (max-width: 1024px){
+            max-width: 314px;
+        }
+        @media only screen and (max-width: 767px){
+            max-width: 100%;
+            padding: 15px;
+        }
+
+    &:hover{
+        background-color: $active-color;
+        }
+
+    &:active{
+        background-color: $btn-color;
+        box-shadow: 4px 4px 30px 0px $btn-color;
+        }
+    }
+}
+
+.footer{
+    background-color: $footer_background-color;
+    padding-top: 71.14px;
+    @media only screen and (max-width: 1024px) {
+        padding-top: 46.59px;
+    }
+    @media only screen and (max-width: 767px) {
+        padding-top: 34.14px;
+    }
+    &__container{
+        @include container();
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 30px;
+        margin-bottom: 67.14px;
+        @media only screen and (max-width: 1024px) {
+            margin-bottom: 43.13px;
+        }
+        @media only screen and (max-width: 767px) {
+            grid-template-columns: 1fr;
+            row-gap: 59px;
+            margin-bottom: 33.14px;
+        }
+    }
+
+    &__title{
+        margin-bottom: 29px;
+        text-align: center;
+        text-transform: uppercase;
+        @include font($font-color, 18px, 700, 21px );
+        font-family: 'Raleway', sans-serif;
+        @media only screen and (max-width: 1024px) {
+            margin-bottom: 17.72px;
+            @include font($font-color, 14px, 700, 16px );
+        }
+        @media only screen and (max-width: 767px) {
+            margin-bottom: 34px;
+            @include font($font-color, 14px, 700, 16px );
+        }
+    }
+
+    &__text{
+        text-align: center;
+        text-transform: capitalize;
+        @include font($font-color, 18px, 400, 21px );
+        font-family: 'Raleway', sans-serif;
+        @media only screen and (max-width: 1024px) {
+            @include font($font-color, 14px, 400, 16px );
+        }
+        @media only screen and (max-width: 767px) {
+            width: 100%;
+            margin: 0 auto;
+            @include font($font-color, 14px, 700, 16px );
+        }
+    }
+
+    &__title-social{
+        margin-bottom: 48.86px;
+        text-align: center;
+        text-transform: uppercase;
+        @include font($font-color, 18px, 700, 21px );
+        font-family: 'Raleway', sans-serif;
+        @media only screen and (max-width: 1024px) {
+            margin-bottom: 32.51px;
+        }
+        @media only screen and (max-width: 767px) {
+            margin-bottom: 36.71px;
+        }
+    }
+
+    &__social{
+        display: flex;
+        justify-content: center;
+        column-gap: 27px;
+    }
+
+    &__link{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 39px;
+        height: 39px;
+        border: 1px solid $color_border-link;
+        transition: fill .3s linear;
+        @media only screen and (max-width: 1024px) {
+            width: 32px;
+            height: 32px;
+        }
+        @media only screen and (max-width: 767px) {
+            width: 39px;
+            height: 39px;
+        }
+
+        &:hover {
+            border: 1px solid $works-background-hover;
+            svg {
+                path {
+                    fill: $active-color;
+                }
+            }
+        }
+
+        &:active {
+            border: 1px solid $works-background-active;
+        }
+    }
+
+    &__svg{
+        transition: fill .3s linear;
+        
+        &:hover 
+            path {
+            fill: $works-background-hover;
+        }
+
+        &:active 
+            path {
+            fill: $works-background-active;
+         }
+    }
+
+    &__copyright-wrapper {
+        background-color: $copyright_background-color;
+        padding: 24px 15px;
+        @media only screen and (max-width: 1024px) {
+            padding: 14px 15px;
+        }
+        @media only screen and (max-width: 767px) {
+            padding: 29px 20px;
+        }
+    }
+
+    &__copyright-text{
+        margin: 0 auto;
+        text-align: center;
+        width: 100%;
+        max-width: 370px;
+        font-family: 'Raleway', sans-serif;
+        @include font($copyright-text, 18px, 400, 21px );
+        span{
+            @include font($font-color, 18px, 400, 21px );
         }
     }
 }

@@ -42,3 +42,10 @@ menuItems.forEach(function(item) {
 function closeMenu() {
         menu.classList.remove('open');
 }
+
+var swiper = new Swiper(".mySwiper", {
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });

@@ -31,5 +31,11 @@ menuItems.forEach(function(item) {
 function closeMenu() {
     menu.classList.remove("open");
 }
+var swiper = new Swiper(".mySwiper", {
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true
+    }
+});
 
 //# sourceMappingURL=index.e30615c8.js.map
